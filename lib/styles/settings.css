@@ -1,0 +1,6 @@
+.ite-purchase-buttons-disabled { opacity: 0.5; }
+.ite-purchase-buttons-hidden-ul { display:none; }
+.it-exchange-admin .wrap ul ul.disable-buy-now-settings,
+.it-exchange-admin .wrap ul ul.disable-add-to-cart-settings,
+.it-exchange-admin .wrap ul ul.buy-now-product-type-scope-ul,
+.it-exchange-admin .wrap ul ul.add-to-cart-product-type-scope-ul { margin-top:10px; margin-bottom:10px; }
