@@ -65,22 +65,26 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 			<?php endif; ?>
 			<div class="it-exchange-enable-product-purchase-buttons">
 				<div class="it-exchange-core-product-purchase-buttons-fields">
-					<label for="it-exchange-product-purchase-buttons-disable-buy-now">
-						<?php _e( 'Buy Now button settings for this product', 'LION' ); ?><br />
+					<div class="it-exchange-product-purchase-buttons-field">
+						<label for="it-exchange-product-purchase-buttons-disable-buy-now">
+							<?php _e( 'Buy Now button', 'LION' ); ?>
+						</label>
 						<select id="it-exchange-product-purchase-buttons-buy-now" name="it-exchange-product-purchase-buttons[buy-now]"> 
 							<option value="default" <?php selected( 'default', $buy_now ); ?>><?php _e( 'Use the default setting', 'LION' ); ?></option>
 							<option value="always" <?php selected( 'always', $buy_now ); ?>><?php _e( 'Always display', 'LION' ); ?></option>
 							<option value="never" <?php selected( 'never', $buy_now ); ?>><?php _e( 'Never display', 'LION' ); ?></option>
 						</select>
-					</label>
-					<label for="it-exchange-product-purchase-buttons-disable-add-to-cart">
-						<?php _e( 'Add to Cart button settings for this product', 'LION' ); ?><br />
+					</div>
+					<div class="it-exchange-product-purchase-buttons-field">
+						<label for="it-exchange-product-purchase-buttons-disable-add-to-cart">
+							<?php _e( 'Add to Cart button', 'LION' ); ?>
+						</label>
 						<select id="it-exchange-product-purchase-buttons-add-to-cart" name="it-exchange-product-purchase-buttons[add-to-cart]"> 
 							<option value="default" <?php selected( 'default', $add_to_cart ); ?>><?php _e( 'Use the default setting', 'LION' ); ?></option>
 							<option value="always" <?php selected( 'always', $add_to_cart ); ?>><?php _e( 'Always display', 'LION' ); ?></option>
 							<option value="never" <?php selected( 'never', $add_to_cart ); ?>><?php _e( 'Never display', 'LION' ); ?></option>
 						</select>
-					</label>
+					</div>
 				</div>
 				<?php wp_nonce_field( 'it-exchange-update-product-purchase-buttons-' . get_current_user_id(), 'it-exchange-update-product-purchase-buttons' ); ?>
 			</div>
