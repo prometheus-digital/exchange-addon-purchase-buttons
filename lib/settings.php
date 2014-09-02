@@ -222,7 +222,7 @@ function it_exchange_purchase_buttons_addon_save_settings() {
 	// Replace disabled fields with old data if they didnn't come through
 	if ( empty( $values['disable-buy-now-scope'] ) || empty( $values['disable-add-to-cart-scope'] ) ) {
 		$old_settings = it_exchange_get_option( 'addon_purchase_buttons', true );
-		$values['disable-buy-now-scope'] = empty( $values['disable-buy-now-scope'] ) ? ( empty( $old_values['disable-buy-now-scope'] ) ? 'globally' : $old_values['disable-buy-now-scope'] ) : $values['disabled-buy-now-scope'];
+		$values['disable-buy-now-scope'] = empty( $values['disable-buy-now-scope'] ) ? ( empty( $old_values['disable-buy-now-scope'] ) ? 'globally' : $old_values['disable-buy-now-scope'] ) : $values['disable-buy-now-scope'];
 		$values['disable-add-to-cart-scope'] = empty( $values['disable-add-to-cart-scope'] ) ? ( empty( $old_values['disable-add-to-cart-scope'] ) ? 'globally' : $old_values['disable-add-to-cart-scope'] ) : $values['disable-add-to-cart-scope'];
 	}
 
