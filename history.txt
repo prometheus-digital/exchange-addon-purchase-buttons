@@ -1,2 +1,4 @@
-2014-10-09 - Glenn Ansley, Ty, Carlson, Elise Alley
+1.0.3 - 2014-10-09 - Glenn Ansley
+	Fixed spelling error in description
+1.0.2 - 2014-10-09 - Glenn Ansley, Ty, Carlson, Elise Alley
 	Initial Release

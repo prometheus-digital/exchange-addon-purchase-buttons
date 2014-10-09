@@ -1,8 +1,8 @@
 <?php
 /*
  * Plugin Name: iThemes Exchange - Purchase Buttons
- * Version: 1.0.0
- * Description: Allows you to customize which purchase buttons are avilable for what products
+ * Version: 1.0.3
+ * Description: Allows you to customize which purchase buttons are available for what products
  * Plugin URI: http://ithemes.com/purchase/purchase-buttons/
  * Author: iThemes
  * Author URI: http://ithemes.com
@@ -26,7 +26,7 @@
 function it_exchange_register_purchase_buttons_addon() {
 	$options = array(
 		'name'              => __( 'Purchase Buttons', 'LION' ),
-		'description'       => __( 'Allows you to customize which purchase buttons are avilable for what products.', 'LION' ),
+		'description'       => __( 'Allows you to customize which purchase buttons are available for what products.', 'LION' ),
 		'author'            => 'iThemes',
 		'author_url'        => 'http://ithemes.com/purchase/purchase-buttons/',
 		'icon'              => ITUtility::get_url_from_file( dirname( __FILE__ ) . '/lib/images/purchase-buttons-50px.png' ),
