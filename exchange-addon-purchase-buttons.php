@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: iThemes Exchange - Purchase Buttons
- * Version: 1.0.3
+ * Version: 1.0.4
  * Description: Allows you to customize which purchase buttons are available for what products
  * Plugin URI: http://ithemes.com/purchase/purchase-buttons/
  * Author: iThemes
