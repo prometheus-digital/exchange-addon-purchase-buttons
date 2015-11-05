@@ -16,9 +16,19 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 	 * @since 1.0.0
 	 * @return void
 	*/
-	function IT_Exchange_Product_Feature_Purchase_Buttons( $args=array() ) {
+	function __construct( $args=array() ) {
 		parent::__construct( $args );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_add_edit_styles' ) );
+	}
+
+	/**
+	 * Deprecated Constructor. Registers hooks
+	 *
+	 * @since 1.0.0
+	 * @return void
+	*/
+	function IT_Exchange_Product_Feature_Purchase_Buttons( $args=array() ) {
+		self::__construct();
 	}
 
 	/**
