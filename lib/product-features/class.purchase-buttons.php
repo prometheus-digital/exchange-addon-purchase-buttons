@@ -57,7 +57,7 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 	 * @return void
 	*/
 	function print_metabox( $post ) {
-		// Grab the iThemes Exchange Product object from the WP $post object
+		// Grab the ExchangeWP Product object from the WP $post object
 		$product = it_exchange_get_product( $post );
 
 		// Set the value of the feature for this product
@@ -79,7 +79,7 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 						<label for="it-exchange-product-purchase-buttons-disable-buy-now">
 							<?php _e( 'Buy Now button', 'LION' ); ?>
 						</label>
-						<select id="it-exchange-product-purchase-buttons-buy-now" name="it-exchange-product-purchase-buttons[buy-now]"> 
+						<select id="it-exchange-product-purchase-buttons-buy-now" name="it-exchange-product-purchase-buttons[buy-now]">
 							<option value="default" <?php selected( 'default', $buy_now ); ?>><?php _e( 'Use the default setting', 'LION' ); ?></option>
 							<option value="always" <?php selected( 'always', $buy_now ); ?>><?php _e( 'Always display', 'LION' ); ?></option>
 							<option value="never" <?php selected( 'never', $buy_now ); ?>><?php _e( 'Never display', 'LION' ); ?></option>
@@ -89,7 +89,7 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 						<label for="it-exchange-product-purchase-buttons-disable-add-to-cart">
 							<?php _e( 'Add to Cart button', 'LION' ); ?>
 						</label>
-						<select id="it-exchange-product-purchase-buttons-add-to-cart" name="it-exchange-product-purchase-buttons[add-to-cart]"> 
+						<select id="it-exchange-product-purchase-buttons-add-to-cart" name="it-exchange-product-purchase-buttons[add-to-cart]">
 							<option value="default" <?php selected( 'default', $add_to_cart ); ?>><?php _e( 'Use the default setting', 'LION' ); ?></option>
 							<option value="always" <?php selected( 'always', $add_to_cart ); ?>><?php _e( 'Always display', 'LION' ); ?></option>
 							<option value="never" <?php selected( 'never', $add_to_cart ); ?>><?php _e( 'Never display', 'LION' ); ?></option>
@@ -124,7 +124,7 @@ class IT_Exchange_Product_Feature_Purchase_Buttons extends IT_Exchange_Product_F
 			return;
 
 		// Check nonce
-		if ( empty( $_POST['it-exchange-update-product-purchase-buttons'] ) 
+		if ( empty( $_POST['it-exchange-update-product-purchase-buttons'] )
 			|| ! wp_verify_nonce( $_POST['it-exchange-update-product-purchase-buttons'], 'it-exchange-update-product-purchase-buttons-' . get_current_user_id() ) ) {
 			return;
 		}
@@ -203,4 +203,4 @@ $purchase_buttons_product_feature_options = array(
 	'description'   => __( 'Which purchase buttons are available for this product', 'LION' ),
 	'product_types' => array_keys( $purchase_buttons_product_types ),
 );
-$IT_Exchange_Product_Feature_Purchase_Buttons = new IT_Exchange_Product_Feature_Purchase_Buttons( $purchase_buttons_product_feature_options ); 
+$IT_Exchange_Product_Feature_Purchase_Buttons = new IT_Exchange_Product_Feature_Purchase_Buttons( $purchase_buttons_product_feature_options );

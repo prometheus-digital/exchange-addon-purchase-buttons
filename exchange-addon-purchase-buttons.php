@@ -1,13 +1,13 @@
 <?php
 /*
- * Plugin Name: iThemes Exchange - Purchase Buttons
+ * Plugin Name: ExchangeWP - Purchase Buttons
  * Version: 1.1.0
  * Description: Allows you to customize which purchase buttons are available for what products
- * Plugin URI: http://ithemes.com/purchase/purchase-buttons/
- * Author: iThemes
- * Author URI: http://ithemes.com
- * iThemes Package: exchange-addon-purchase-buttons
- 
+ * Plugin URI: https://exchangewp.com/downloads/purchase-buttons/
+ * Author: ExchangeWP
+ * Author URI: https://exchangewp.com
+ * ExchangeWP Package: exchange-addon-purchase-buttons
+
  * Installation:
  * 1. Download and unzip the latest release zip file.
  * 2. If you use the WordPress plugin uploader to install this plugin skip to step 4.
@@ -27,8 +27,8 @@ function it_exchange_register_purchase_buttons_addon() {
 	$options = array(
 		'name'              => __( 'Purchase Buttons', 'LION' ),
 		'description'       => __( 'Allows you to customize which purchase buttons are available for what products.', 'LION' ),
-		'author'            => 'iThemes',
-		'author_url'        => 'http://ithemes.com/purchase/purchase-buttons/',
+		'author'            => 'ExchangeWP',
+		'author_url'        => 'https://exchangewp.com/downloads/purchase-buttons/',
 		'icon'              => ITUtility::get_url_from_file( dirname( __FILE__ ) . '/lib/images/purchase-buttons-50px.png' ),
 		'file'              => dirname( __FILE__ ) . '/init.php',
 		'category'          => 'product-feature',
@@ -59,8 +59,8 @@ add_action( 'plugins_loaded', 'it_exchange_purchase_buttons_set_textdomain' );
  * @param object $updater ithemes updater object
  * @return void
 */
-function ithemes_exchange_addon_purchase_buttons_updater_register( $updater ) { 
+function ithemes_exchange_addon_purchase_buttons_updater_register( $updater ) {
 	    $updater->register( 'exchange-addon-purchase-buttons', __FILE__ );
 }
 add_action( 'ithemes_updater_register', 'ithemes_exchange_addon_purchase_buttons_updater_register' );
-require( dirname( __FILE__ ) . '/lib/updater/load.php' );
+// require( dirname( __FILE__ ) . '/lib/updater/load.php' );
