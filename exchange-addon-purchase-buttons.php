@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: ExchangeWP - Purchase Buttons
- * Version: 1.1.1
+ * Version: 0.0.1
  * Description: Allows you to customize which purchase buttons are available for what products
  * Plugin URI: https://exchangewp.com/downloads/purchase-buttons/
  * Author: ExchangeWP
@@ -59,38 +59,26 @@ add_action( 'plugins_loaded', 'it_exchange_purchase_buttons_set_textdomain' );
  * @param object $updater ithemes updater object
  * @return void
 */
-function ithemes_exchange_addon_purchase_buttons_updater_register( $updater ) {
-	    $updater->register( 'exchange-addon-purchase-buttons', __FILE__ );
+function exchange_purchase_buttons_plugin_update() {
+
+	$license_check = get_transient( 'exchangewp_license_check' );
+
+	if ($license_check->license == 'valid' ) {
+		$license_key = it_exchange_get_option( 'exchangewp_licenses' );
+		$license = $license_key['exchange_license'];
+
+		$edd_updater = new EDD_SL_Plugin_Updater( 'https://exchangewp.com', __FILE__, array(
+				'version' 		=> '0.0.1', 				// current version number
+				'license' 		=> $license, 		// license key (used get_option above to retrieve from DB)
+				'item_name' 	=> 'purchase-buttons', 	  // name of this plugin
+				'author' 	  	=> 'ExchangeWP',    // author of this plugin
+				'url'       	=> home_url(),
+				'wp_override' => true,
+				'beta'		  	=> false
+			)
+		);
+	}
+
 }
-add_action( 'ithemes_updater_register', 'ithemes_exchange_addon_purchase_buttons_updater_register' );
-// require( dirname( __FILE__ ) . '/lib/updater/load.php' );
 
-if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) )  {
- 	require_once 'EDD_SL_Plugin_Updater.php';
- }
-
- function exchange_purchase_buttons_plugin_updater() {
-
- 	// retrieve our license key from the DB
- 	// this is going to have to be pulled from a seralized array to get the actual key.
- 	// $license_key = trim( get_option( 'exchange_purchase_buttons_license_key' ) );
- 	$exchangewp_purchase_buttons_options = get_option( 'it-storage-exchange_purchase_buttons-addon' );
- 	$license_key = $exchangewp_purchase_buttons_options['purchase_buttons-license-key'];
-
- 	// setup the updater
- 	$edd_updater = new EDD_SL_Plugin_Updater( 'https://exchangewp.com', __FILE__, array(
- 			'version' 		=> '1.1.1', 				// current version number
- 			'license' 		=> $license_key, 		// license key (used get_option above to retrieve from DB)
- 			'item_name' 	=> 'purchase-buttons', 	  // name of this plugin
- 			'author' 	  	=> 'ExchangeWP',    // author of this plugin
- 			'url'       	=> home_url(),
- 			'wp_override' => true,
- 			'beta'		  	=> false
- 		)
- 	);
- 	// var_dump($edd_updater);
- 	// die();
-
- }
-
- add_action( 'admin_init', 'exchange_purchase_buttons_plugin_updater', 0 );
+add_action( 'admin_init', 'exchange_purchase_buttons_plugin_update', 0 );
