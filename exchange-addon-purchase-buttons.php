@@ -52,11 +52,11 @@ function it_exchange_purchase_buttons_set_textdomain() {
 add_action( 'plugins_loaded', 'it_exchange_purchase_buttons_set_textdomain' );
 
 /**
- * Registers Plugin with iThemes updater class
+ * Registers Plugin with ExchangeWP updater class
  *
  * @since 1.0.0
  *
- * @param object $updater ithemes updater object
+ * @param object $updater exchangewp updater object
  * @return void
 */
 function exchange_purchase_buttons_plugin_update() {
@@ -69,8 +69,8 @@ function exchange_purchase_buttons_plugin_update() {
 
 		$edd_updater = new EDD_SL_Plugin_Updater( 'https://exchangewp.com', __FILE__, array(
 				'version' 		=> '0.0.1', 				// current version number
-				'license' 		=> $license, 		// license key (used get_option above to retrieve from DB)
-				'item_name' 	=> 'purchase-buttons', 	  // name of this plugin
+				'license' 		=> $license, 				// license key (used get_option above to retrieve from DB)
+				'item_id'		 	=> 536,					 	  // name of this plugin
 				'author' 	  	=> 'ExchangeWP',    // author of this plugin
 				'url'       	=> home_url(),
 				'wp_override' => true,
